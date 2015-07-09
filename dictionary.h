@@ -1,5 +1,6 @@
 using namespace std;
 
+#include <algorithm>
 #include <iterator>
 #include <string>
 #include <vector>
@@ -45,7 +46,7 @@ public:
 		return keys;
 	}
 
-	std::vector<value>	Items() const {
+	std::vector<value> Items() const {
 		std::vector<value> values;
 		std::transform(begin(), end(), std::back_inserter(values), VALUE);
 		return values;
