@@ -21,7 +21,7 @@ class Dictionary {
 	};
 
 public:
-	Dictionary(){}
+	Dictionary(){} 
 	virtual ~Dictionary(){}
 	void Add(key k, value v) {
 		map.insert(std::pair<key, value>(k, v));
