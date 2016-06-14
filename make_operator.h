@@ -4,7 +4,7 @@
 #define MAKE_OPERATOR
 
 namespace{
-  template<typename P>
+	template<typename P>
 	struct wrapper {
 		P ptr;
 	};
