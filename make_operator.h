@@ -9,19 +9,19 @@ namespace{
 		P ptr;
 	};
 
-	template<typename V, typename F>
+	template<typename V, typename P>
 	struct value {
 		V val;
-		F ptr;
+		P ptr;
 	};
 
-	template<typename V, typename F>
-	inline value<V, F> operator < (V left, wrapper<F> right) {
+	template<typename V, typename P>
+	inline value<V, P> operator < (V left, wrapper<P> right) {
 		return{ left , right.ptr };
 	}
 
-	template<typename V, typename F, typename T>
-	inline auto operator > (value<V, F> left, T right) {
+	template<typename V, typename P, typename T>
+	inline auto operator > (value<V, P> left, T right) {
 		return left.ptr(left.val, right);
 	}
 
