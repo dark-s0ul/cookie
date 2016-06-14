@@ -20,8 +20,8 @@ namespace{
 		return{ v , o.ptr };
 	}
 
-	template<typename F, typename V, typename T>
-	inline auto operator > (value<F, V> a, T b) {
+	template<typename V, typename F, typename T>
+	inline auto operator > (value<V, F> a, T b) {
 		return a.ptr(a.val, b);
 	}
 
