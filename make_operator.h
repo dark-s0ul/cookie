@@ -16,18 +16,18 @@ namespace{
 	};
 
 	template<typename V, typename F>
-	inline value<V, F> operator < (V v, wrapper<F> o) {
-		return{ v , o.ptr };
+	inline value<V, F> operator < (V left, wrapper<F> right) {
+		return{ left , right.ptr };
 	}
 
 	template<typename V, typename F, typename T>
-	inline auto operator > (value<V, F> a, T b) {
-		return a.ptr(a.val, b);
+	inline auto operator > (value<V, F> left, T right) {
+		return left.ptr(left.val, right);
 	}
 
-	template<typename F>
-	inline constexpr wrapper<F> make_operator(F f) {
-		return{ f };
+	template<typename P>
+	inline constexpr wrapper<P> make_operator(P p) {
+		return{ p };
 	}
 }
 #endif 
