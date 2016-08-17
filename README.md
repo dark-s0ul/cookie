@@ -40,11 +40,11 @@ res = 11 <in> v; //Will return false
 ```
 
 <details> 
-	<summary># Brainfuck interpreter </summary>
-	How to use:
-	```c++
-	#include "bf.h"
-	
-	bf::eval("+++++++[>+++++++<-]>."); //Will print 1
-	```
+<summary># Brainfuck interpreter </summary>
+How to use:
+```c++
+#include "bf.h"
+
+bf::eval("+++++++[>+++++++<-]>."); //Will print 1
+```
 </details>
