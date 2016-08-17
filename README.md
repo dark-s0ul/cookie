@@ -4,6 +4,7 @@ This is the pack of light and "useful" codes for c++
 
 # Brainfuck interpreter
 How to use:
+
 	```javascript
 	#include "bf.h"
 	
