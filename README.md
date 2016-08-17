@@ -13,7 +13,8 @@ bf::eval("+++++++[>+++++++<-]>."); //Will print 1
 </details>
 
 # Dynamic function
-How to use:
+<details> 
+<summary>How to use:</summary>
 ```c++
 #include "func_ptr.h"
 
@@ -26,9 +27,11 @@ auto mul = func_ptr<int(int, int)>({
 	
 int res = mul(23, 3); //Will return 69
 ```	
+</details>
 
 # Custom operator
-How to use:
+<details> 
+<summary>How to use:</summary>
 ```c++
 #include "make_operator.h"
 
@@ -46,3 +49,4 @@ std::vector<int> v = { 10 };
 bool res = 10 <in> v; //Will return true
 res = 11 <in> v; //Will return false
 ```
+</details>
