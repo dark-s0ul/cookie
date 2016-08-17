@@ -1,4 +1,5 @@
 #include <sys/mman.h>
+#include <memory>
 #include <vector>
 
 template<typename T>
@@ -13,7 +14,7 @@ public:
 	}
 	inline ~func_ptr(){ munmap(ptr, size); }
 	
-	inline T operator (Args... args){
+	inline T operator ()(Args... args){
 		return ((T(*)(Args ...))ptr)(args ...);
 	}
 	
