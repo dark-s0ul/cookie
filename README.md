@@ -34,31 +34,23 @@ int res = mul(23, 3); //Will return 69
 ```c++
 #include "make_operator.h"
 
+<details> 
 struct _in {
 	template <typename T>
 	inline bool operator ()(T value, std::vector<T> const& vector) const {
 		return std::find(vector.begin(), vector.end(), value) != vector.end();
 	}
 };
-
+</details>
 auto in = make_operator(_in());
+
+auto in = make_operator([](auto value, auto vector) -> bool {
+	return std::find(vector.begin(), vector.end(), value) != vector.end();
+});
 
 std::vector<int> v = { 10 };
 
 bool res = 10 <in> v; //Will return true
 res = 11 <in> v; //Will return false
-```
-</details>
-
-<details> 
-<summary>Example (lambda):</summary>
-```c++
-#include "make_operator.h"
-auto lg = make_operator([](auto a, auto b) -> auto {
-	return log10(a) / log10(b);
-});
-
-int res = 100 <lg> 10; //Will return 2
-res = 5 <lg> 2; //Will return 2.32193
 ```
 </details>
