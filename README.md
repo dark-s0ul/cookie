@@ -48,6 +48,9 @@ std::vector<int> v = { 10 };
 bool res = 10 <in> v; //Will return true
 res = 11 <in> v; //Will return false
 ```
+</details>
+
+<details> 
 <summary>Example (lambda):</summary>
 ```c++
 #include "make_operator.h"
