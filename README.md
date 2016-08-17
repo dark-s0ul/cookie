@@ -9,6 +9,7 @@ How to use:
 
 bf::eval("+++++++[>+++++++<-]>."); //Will print 1
 ```
+
 # Dynamic function
 How to use:
 ```c++
@@ -21,8 +22,9 @@ auto mul = func_ptr<int(int, int)>({
 	0x1E, 0xFF, 0x2F, 0xE1
 });
 	
-	int res = mul(23, 3); //Will return 69
+int res = mul(23, 3); //Will return 69
 ```	
+
 # Custom operator
 How to use:
 ```c++
