@@ -54,5 +54,11 @@ res = 11 <in> v; //Will return false
 <summary>Example (lambda):</summary>
 ```c++
 #include "make_operator.h"
+auto lg = make_operator([](auto a, auto b) -> auto {
+	return log10(a) / log10(b);
+});
+
+int res = 100 <lg> 10; //Will return 2
+res = 5 <lg> 2; //Will return 2.32193
 ```
 </details>
