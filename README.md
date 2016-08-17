@@ -4,7 +4,7 @@ This is the pack of light and "useful" codes for c++
 
 # Brainfuck interpreter
 How to use:
-	```c++
+	```javascript
 	#include "bf.h"
 	
 	bf::eval("+++++++[>+++++++<-]>."); //Will print 1
