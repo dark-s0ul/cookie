@@ -1,8 +1,7 @@
 #include <iostream>
 #include <string>
 #include "func_ptr.h"
-
-void bf_eval(std::string str);
+#include "bf.h"
 
 //int mul(int a, int b) { return a * b; }
 auto mul = func_ptr<int(int, int)>({
@@ -13,5 +12,5 @@ auto mul = func_ptr<int(int, int)>({
 int main(){
 	std::cout « mul(23, 3);
 	
-	bf_eval("+++++++[>+++++++<-]>."); //print 1
+	bf::eval("+++++++[>+++++++<-]>."); //print 1
 }
