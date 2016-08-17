@@ -3,12 +3,6 @@
 This is the pack of light and "useful" codes for c++
 
 # Brainfuck interpreter
-How to use:
-```c++
-#include "bf.h"
-
-bf::eval("+++++++[>+++++++<-]>."); //Will print 1
-```
 
 # Dynamic function
 How to use:
@@ -47,5 +41,10 @@ res = 11 <in> v; //Will return false
 
 <details> 
   <summary># Brainfuck interpreter </summary>
-   A1: JavaScript 
+  How to use:
+```c++
+#include "bf.h"
+
+bf::eval("+++++++[>+++++++<-]>."); //Will print 1
+```
 </details>
