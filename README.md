@@ -35,6 +35,7 @@ int res = mul(23, 3); //Will return 69
 #include "make_operator.h"
 
 <details> 
+<summary>Example:</summary>
 struct _in {
 	template <typename T>
 	inline bool operator ()(T value, std::vector<T> const& vector) const {
