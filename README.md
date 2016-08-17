@@ -34,17 +34,17 @@ int res = mul(23, 3); //Will return 69
 ```c++
 #include "make_operator.h"
 
-<details> 
-<summary>Example:</summary>
+//Using struct
 struct _in {
 	template <typename T>
 	inline bool operator ()(T value, std::vector<T> const& vector) const {
 		return std::find(vector.begin(), vector.end(), value) != vector.end();
 	}
 };
-</details>
+
 auto in = make_operator(_in());
 
+//Using lambda
 auto in = make_operator([](auto value, auto vector) -> bool {
 	return std::find(vector.begin(), vector.end(), value) != vector.end();
 });
