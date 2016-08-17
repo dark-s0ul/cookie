@@ -44,3 +44,8 @@ std::vector<int> v = { 10 };
 bool res = 10 <in> v; //Will return true
 res = 11 <in> v; //Will return false
 ```
+
+<details> 
+  <summary>Q1: What is the best Language in the World? </summary>
+   A1: JavaScript 
+</details>
