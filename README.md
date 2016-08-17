@@ -1,7 +1,7 @@
-## Cookies!
+### Cookies!
 Light and "useful" codes for c++
 
-## Brainfuck interpreter
+### Brainfuck interpreter
 <details> 
 <summary>Example:</summary>
 ```c++
@@ -11,7 +11,7 @@ bf::eval("+++++++[>+++++++<-]>."); //Will print 1
 ```
 </details>
 
-## Dynamic function
+### Dynamic function
 <details> 
 <summary>Example:</summary>
 ```c++
@@ -28,7 +28,7 @@ int res = mul(23, 3); //Will return 69
 ```	
 </details>
 
-## Custom operator
+### Custom operator
 <details> 
 <summary>Example:</summary>
 ```c++
