@@ -3,7 +3,7 @@ Light and "useful" codes for c++
 
 ## Brainfuck interpreter
 <details> 
-<summary>How to use:</summary>
+<summary>Example:</summary>
 ```c++
 #include "bf.h"
 
@@ -13,7 +13,7 @@ bf::eval("+++++++[>+++++++<-]>."); //Will print 1
 
 ## Dynamic function
 <details> 
-<summary>How to use:</summary>
+<summary>Example:</summary>
 ```c++
 #include "func_ptr.h"
 
@@ -30,7 +30,7 @@ int res = mul(23, 3); //Will return 69
 
 ## Custom operator
 <details> 
-<summary>How to use:</summary>
+<summary>Example (struct):</summary>
 ```c++
 #include "make_operator.h"
 
@@ -47,5 +47,9 @@ std::vector<int> v = { 10 };
 
 bool res = 10 <in> v; //Will return true
 res = 11 <in> v; //Will return false
+```
+<summary>Example (lambda):</summary>
+```c++
+#include "make_operator.h"
 ```
 </details>
