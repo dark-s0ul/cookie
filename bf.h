@@ -28,7 +28,7 @@ namespace bf{
 				while(*p){
 					if(*s == ']') br++;
 					if(*s == '[' && br-- == 1) break;
-					s++;
+					s--;
 				}
 			}
 			s++;
