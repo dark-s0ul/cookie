@@ -4,12 +4,14 @@ This is the pack of light "useful" codes for c++
 
 # Brainfuck interpreter
 How to use:
+
 	#include "bf.h"
 	
 	bf::eval("+++++++[>+++++++<-]>."); //Will print 1
 	
 # Dynamic function
 How to use:
+
 	#include "func_ptr.h"
 	
 	//int mul(int a, int b) { return a * b; }
@@ -23,6 +25,7 @@ How to use:
 	
 # Custom operator
 How to use:
+
 	#include "make_operator.h"
 	
 	struct _in {
