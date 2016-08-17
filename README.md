@@ -30,7 +30,7 @@ How to use:
 	
 	struct _in {
 		template <typename T>
-		bool operator ()(T value, std::vector<T> const& vector) const {
+		inline bool operator ()(T value, std::vector<T> const& vector) const {
 			return std::find(vector.begin(), vector.end(), value) != vector.end();
 		}
 	};
