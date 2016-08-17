@@ -22,8 +22,7 @@ namespace bf {
 					if (*s == ']' && br-- == 1) break;
 					s++;
 				}
-			}
-			else if (*s == ']') {
+			} else if (*s == ']') {
 				int br = 0;
 				while (*p) {
 					if (*s == ']') br++;
