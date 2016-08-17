@@ -1,6 +1,6 @@
-### This is the pack of light and "useful" codes for c++
+## This is the pack of light and "useful" codes for c++
 
-## Brainfuck interpreter
+### Brainfuck interpreter
 <details> 
 <summary>How to use:</summary>
 ```c++
@@ -10,7 +10,7 @@ bf::eval("+++++++[>+++++++<-]>."); //Will print 1
 ```
 </details>
 
-## Dynamic function
+### Dynamic function
 <details> 
 <summary>How to use:</summary>
 ```c++
@@ -27,7 +27,7 @@ int res = mul(23, 3); //Will return 69
 ```	
 </details>
 
-## Custom operator
+### Custom operator
 <details> 
 <summary>How to use:</summary>
 ```c++
