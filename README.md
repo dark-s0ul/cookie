@@ -46,6 +46,6 @@ res = 11 <in> v; //Will return false
 ```
 
 <details> 
-  <summary>Q1: What is the best Language in the World? </summary>
+  <summary># Brainfuck interpreter </summary>
    A1: JavaScript 
 </details>
