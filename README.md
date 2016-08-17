@@ -1,6 +1,4 @@
-# Hello!
-
-This is the pack of light and "useful" codes for c++
+### This is the pack of light and "useful" codes for c++
 
 ## Brainfuck interpreter
 <details> 
