@@ -2,7 +2,7 @@
 
 This is the pack of light and "useful" codes for c++
 
-# Brainfuck interpreter
+### Brainfuck interpreter
 <details> 
 <summary>How to use:</summary>
 ```c++
