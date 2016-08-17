@@ -3,6 +3,14 @@
 This is the pack of light and "useful" codes for c++
 
 # Brainfuck interpreter
+<details> 
+<summary>How to use:</summary>
+```c++
+#include "bf.h"
+
+bf::eval("+++++++[>+++++++<-]>."); //Will print 1
+```
+</details>
 
 # Dynamic function
 How to use:
@@ -38,12 +46,3 @@ std::vector<int> v = { 10 };
 bool res = 10 <in> v; //Will return true
 res = 11 <in> v; //Will return false
 ```
-
-<details> 
-	<summary>How to use:</summary>
-	```c++
-	#include "bf.h"
-	
-	bf::eval("+++++++[>+++++++<-]>."); //Will print 1
-	```
-</details>
