@@ -30,7 +30,7 @@ int res = mul(23, 3); //Will return 69
 
 ## Custom operator
 <details> 
-<summary>Example (struct):</summary>
+<summary>Example:</summary>
 ```c++
 #include "make_operator.h"
 
@@ -41,7 +41,6 @@ struct _in {
 		return std::find(vector.begin(), vector.end(), value) != vector.end();
 	}
 };
-
 auto in = make_operator(_in());
 
 //Using lambda
