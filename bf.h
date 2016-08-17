@@ -1,6 +1,6 @@
-#include <stdio.h>
 #include <string>
 #include <vector>
+#include <conio.h>
 
 namespace bf {
 	std::vector<char> mem(30000);
@@ -13,8 +13,8 @@ namespace bf {
 			else if (*s == '<' && p != mem.begin()) p--;
 			else if (*s == '+')++*p;
 			else if (*s == '-')--*p;
-			else if (*s == '.') putc(*p, stdout);
-			else if (*s == ',') *p = getc(stdin);
+			else if (*s == '.') _putch(*p);
+			else if (*s == ',') _putch(*p = _getch());
 			else if (*s == '[') {
 				int br = 0;
 				while (!*p) {
