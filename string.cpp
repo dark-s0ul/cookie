@@ -76,6 +76,6 @@ char& string::operator[] (int index) {
 	return buffer[index];
 }
 
-inline unsigned string::size() { return length; }
-inline bool string::empty() { return length == 0; }
-inline char *string::c_str() { return buffer; }
+unsigned string::size() { return length; }
+bool string::empty() { return length == 0; }
+char *string::c_str() { return buffer; }
