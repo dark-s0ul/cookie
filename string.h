@@ -2,7 +2,7 @@
 
 unsigned strlen(const char *);
 void strncpy(char *, const char *, unsigned);
-void strcpy(char *, const char *source);
+void strcpy(char *, const char *);
 
 class string {
 private:
