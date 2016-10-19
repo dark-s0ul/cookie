@@ -37,7 +37,7 @@ string& string::operator=(const string &str) {
 	return *this;
 }
 
-string string::operator+(const string& str1, const string& str2) {
+string operator+(const string& str1, const string& str2) {
 	string str;
 	str.length = str1.length + str2.length;
 	str.buffer = new char[str.length];
@@ -46,7 +46,7 @@ string string::operator+(const string& str1, const string& str2) {
 	return str;
 }
 
-string string::operator+(const string& str1, char c) {
+string operator+(const string& str1, char c) {
 	string str;
 	str.length = str1.length + 1;
 	str.buffer = new char[str.length];
@@ -55,7 +55,7 @@ string string::operator+(const string& str1, char c) {
 	return str;
 }
 
-string string::operator+(char c, const string& str1) {
+string operator+(char c, const string& str1) {
 	string str;
 	str.length = str1.length + 1;
 	str.buffer = new char[str.length];
