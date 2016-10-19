@@ -7,7 +7,7 @@ Light and "useful" codes for c++
 ```c++
 #include "bf.h"
 
-bf::eval("+++++++[>+++++++<-]>."); //Will print 1
+bf::eval("+++++++[>+++++++<-]>."); //print 1
 ```
 </details>
 
@@ -24,7 +24,7 @@ auto mul = func_ptr<int(int, int)>({
 	0x1E, 0xFF, 0x2F, 0xE1
 });
 	
-int res = mul(23, 3); //Will return 69
+int res = mul(23, 3); //69
 ```	
 </details>
 
@@ -50,7 +50,7 @@ auto in = make_operator([](auto value, auto vector) -> bool {
 
 std::vector<int> v = { 10 };
 
-bool res = 10 <in> v; //Will return true
-res = 11 <in> v; //Will return false
+bool res = 10 <in> v; //true
+res = 11 <in> v; //false
 ```
 </details>
