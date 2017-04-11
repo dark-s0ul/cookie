@@ -1,17 +1,12 @@
-## Cookies!
 Light and "useful" codes for c++
 
 ## Brainfuck interpreter
-	<summary>Example:</summary>
-	```c++
 	#include "bf.h"
 
 	bf::eval("+++++++[>+++++++<-]>."); //print 1
-	```
+
 
 ## Dynamic function
-	<summary>Example:</summary>
-	```c++
 	#include "func_ptr.h"
 
 	//int mul(int a, int b) { return a * b; }
@@ -21,11 +16,8 @@ Light and "useful" codes for c++
 	});
 
 	int res = mul(23, 3); //69
-	```
 
 ## Custom operator
-	<summary>Example:</summary>
-	```c++
 	#include "make_operator.h"
 
 	//Using struct
@@ -46,4 +38,3 @@ Light and "useful" codes for c++
 
 	bool res = 10 <in> v; //true
 	res = 11 <in> v; //false
-	```
