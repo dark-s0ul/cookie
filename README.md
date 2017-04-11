@@ -2,7 +2,7 @@
 Light and "useful" codes for c++
 
 ## Brainfuck interpreter
-	<summary>Example:</summary>
+<summary>Example:</summary>
 	```c++
 	#include "bf.h"
 
@@ -10,13 +10,12 @@ Light and "useful" codes for c++
 	```
 
 ## Dynamic function
-	<summary>Example:</summary>
+<summary>Example:</summary>
 	```c++
 	#include "func_ptr.h"
 
 	//int mul(int a, int b) { return a * b; }
 	auto mul = func_ptr<int(int, int)>({
-		//Put your asm code here
 		0x90, 0x01, 0x00, 0xE0,
 		0x1E, 0xFF, 0x2F, 0xE1
 	});
@@ -25,7 +24,7 @@ Light and "useful" codes for c++
 	```
 
 ## Custom operator
-	<summary>Example:</summary>
+<summary>Example:</summary>
 	```c++
 	#include "make_operator.h"
 
