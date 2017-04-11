@@ -5,7 +5,6 @@ Light and "useful" codes for c++
 <summary>Example:</summary>
 ```c++
 #include "bf.h"
-
 bf::eval("+++++++[>+++++++<-]>."); //print 1
 ```
 
