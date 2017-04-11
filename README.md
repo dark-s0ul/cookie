@@ -2,16 +2,15 @@
 Light and "useful" codes for c++
 
 ## Brainfuck interpreter
-<details>
-<summary>Example:</summary>
-```c++
-#include "bf.h"
+	<details>
+	<summary>Example:</summary>
+	```c++
+	#include "bf.h"
 
-bf::eval("+++++++[>+++++++<-]>."); //print 1
-```
-</details>
-</details>
-
+	bf::eval("+++++++[>+++++++<-]>."); //print 1
+	```
+	</details>
+	</details>
 
 ## Dynamic function
 <details>
