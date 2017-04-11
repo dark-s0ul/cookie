@@ -8,8 +8,7 @@ Light and "useful" codes for c++
 #include "bf.h"
 
 bf::eval("+++++++[>+++++++<-]>."); //print 1
-```
-</details>
+```</details>
 
 ## Dynamic function
 <details>
