@@ -6,11 +6,13 @@ Light and "useful" codes for c++
 <summary>Example:</summary>
 ```c++
 #include "bf.h"
+
 bf::eval("+++++++[>+++++++<-]>."); //print 1
 ```
 </details>
 
 ## Dynamic function
+<details>
 <summary>Example:</summary>
 ```c++
 #include "func_ptr.h"
@@ -24,6 +26,7 @@ auto mul = func_ptr<int(int, int)>({
 	
 int res = mul(23, 3); //69
 ```
+</details>
 
 ## Custom operator
 <summary>Example:</summary>
