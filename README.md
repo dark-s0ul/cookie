@@ -2,7 +2,7 @@
 Light and "useful" codes for c++
 
 ## Brainfuck interpreter
-<summary>Example:</summary>
+	<summary>Example:</summary>
 	```c++
 	#include "bf.h"
 
@@ -10,7 +10,7 @@ Light and "useful" codes for c++
 	```
 
 ## Dynamic function
-<summary>Example:</summary>
+	<summary>Example:</summary>
 	```c++
 	#include "func_ptr.h"
 
@@ -24,7 +24,7 @@ Light and "useful" codes for c++
 	```
 
 ## Custom operator
-<summary>Example:</summary>
+	<summary>Example:</summary>
 	```c++
 	#include "make_operator.h"
 
