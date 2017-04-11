@@ -9,7 +9,9 @@ Light and "useful" codes for c++
 
 bf::eval("+++++++[>+++++++<-]>."); //print 1
 ```
-<details>
+</details>
+</details>
+
 
 ## Dynamic function
 <details>
@@ -27,8 +29,10 @@ auto mul = func_ptr<int(int, int)>({
 int res = mul(23, 3); //69
 ```
 </details>
+</details>
 
 ## Custom operator
+<details>
 <summary>Example:</summary>
 ```c++
 #include "make_operator.h"
@@ -52,3 +56,5 @@ std::vector<int> v = { 10 };
 bool res = 10 <in> v; //true
 res = 11 <in> v; //false
 ```
+</details>
+</details>
