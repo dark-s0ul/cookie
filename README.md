@@ -1,10 +1,11 @@
 Light and "useful" codes for c++
 
 ## Brainfuck interpreter
-	#include "bf.h"
+```с++
+#include "bf.h"
 
-	bf::eval("+++++++[>+++++++<-]>."); //print 1
-
+bf::eval("+++++++[>+++++++<-]>."); //print 1
+```
 
 ## Dynamic function
 	#include "func_ptr.h"
