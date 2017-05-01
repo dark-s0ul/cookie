@@ -1,7 +1,7 @@
 Light and "useful" codes for c++
 
 ## Brainfuck interpreter
-```с++
+```с
 #include "bf.h"
 
 bf::eval("+++++++[>+++++++<-]>."); //print 1
