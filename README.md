@@ -39,7 +39,7 @@ f = [&](int v) -> { func(v); a->func(v); };
 f(0); // call lambda
 
 f = b;
-f(0); // call b.operator()();
+f(0); // call b.operator()(0);
 ```
 
 ## Custom operator
