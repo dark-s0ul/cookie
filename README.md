@@ -35,7 +35,7 @@ f(0); // call func(0);
 f = function<void(int)>(&a, &A::func);
 f(0); // call a->func(0);
 
-f = [&](int v) -> { func(v); a->func(v); };
+f = [&](int v) -> { func(v); a.func(v); };
 f(0); // call lambda
 
 f = b;
