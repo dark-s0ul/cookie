@@ -22,24 +22,20 @@ int res = mul(23, 3); //69
 
 ## Function holder
 ```
+faster in ~2 times than std::function
+
 #include "function.h"
 
 void func(int) {}
 
 struct A { void func(int) {} } a;
-struct B { void operator()(int) {} } b;
+struct B { void operator()(int) {} static void func(int) {} } b;
 
 function<void(int)> f = func;
-f(0); // call func(0);
-
 f = function<void(int)>(&a, &A::func);
-f(0); // call a->func(0);
-
 f = [&](int v) -> { func(v); a.func(v); };
-f(0); // call lambda
-
+f = &B::func;
 f = b;
-f(0); // call b.operator()(0);
 ```
 
 ## Custom operator
