@@ -31,7 +31,6 @@ private:
 		inline accessor(const M &func) : func(new holder<M>(func)) {}
 
 		inline ~accessor() {
-			std::cout << func << std::endl;
 			delete func;
 			func = 0;
 		}
