@@ -7,6 +7,35 @@ Light and "useful" codes for c++
 bf::eval("+++++++[>+++++++<-]>."); //print 1
 ```
 
+## Getter & Setter
+```
+#include <iostream>
+
+#include "property.h"
+
+struct A {
+	property<int> value {
+		[&]() -> int { 
+			return x * x;
+		},
+		[&](auto value) {
+			x = value;
+		}
+	};
+
+	int x;
+};
+
+int main() {
+	A a;
+
+	a.value = 10;
+
+	std::cout << a.x << std::endl; //print 10
+	std::cout << a.value << std::endl; //print 100
+}
+```
+
 ## Dynamic function
 ```
 #include "func_ptr.h"
