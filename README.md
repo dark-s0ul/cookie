@@ -10,6 +10,7 @@ bf::eval("+++++++[>+++++++<-]>."); //print 1
 ## Getter & Setter
 ```
 #include <iostream>
+#include <assert.h>
 
 #include "property.h"
 
@@ -28,17 +29,17 @@ struct A {
 
 int main() {
 	A a;
-
 	a.value = 10;
 
-	std::cout << a.x << std::endl; //print 10
-	std::cout << a.value << std::endl; //print 100
+	assert(a.x == 10);
+	assert(a.value == 100);
 }
 ```
 
 ## Dynamic function
 ```
 #include "func_ptr.h"
+#include <assert.h>
 
 //int mul(int a, int b) { return a * b; }
 auto mul = func_ptr<int(int, int)>({
@@ -46,7 +47,9 @@ auto mul = func_ptr<int(int, int)>({
 	0x1E, 0xFF, 0x2F, 0xE1
 });
 
-int res = mul(23, 3); //69
+int main() {
+	assert(mul(23, 3) == 69);
+}
 ```
 
 ## Function holder
@@ -70,6 +73,7 @@ f = b;
 ## Custom operator
 ```
 #include "make_operator.h"
+#include <assert.h>
 
 //Using struct
 struct _in {
@@ -85,8 +89,10 @@ auto in = make_operator([](auto value, auto vector) -> bool {
 	return std::find(vector.begin(), vector.end(), value) != vector.end();
 });
 
-std::vector<int> v = { 10 };
+int main() {
+	std::vector<int> v = { 10 };
 
-bool res = 10 <in> v; //true
-res = 11 <in> v; //false
+	assert(10 <in> v);
+	assert(!(11 <in> v));
+}
 ```
