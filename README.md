@@ -1,7 +1,7 @@
 Light and "useful" codes for c++
 
 ## Coroutine
-```
+```cpp
 #include "coroutine.h"
 
 template <typename T>
