@@ -107,8 +107,6 @@ int main() {
 
 ## Function holder
 ```cpp
-faster in ~2 times than std::function
-
 #include "function.h"
 
 void func(int) {}
