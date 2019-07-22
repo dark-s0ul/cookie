@@ -1,5 +1,58 @@
 Light and "useful" codes for c++
 
+## Coroutine
+```
+#include "coroutine.h"
+
+template <typename T>
+struct generator : protected coroutine {
+	using coroutine::coroutine;
+	using coroutine::done;
+	using coroutine::resume;
+
+	inline T current() noexcept {
+		return *static_cast<const T*>(v_ptr);
+	}
+};
+
+
+template <typename T>
+generator<T> range(T min, T max) {
+	return [min, max] {
+		for (T v = min; v <= max; v++) {
+			yield(v);
+		}
+	};
+}
+
+template <typename T, typename F>
+generator<int> select(generator<T>&& g, const F& predicate) {
+	return [g = std::forward<generator<T>>(g), predicate]() mutable {
+		while (g.resume()) {
+			auto&& v = g.current();
+			if (predicate(v)) {
+				yield(v);
+			}
+		}
+	};
+}
+
+bool is_power_of_2(int x) {
+	return x > 0 && !(x & (x - 1));
+}
+
+int main() {
+	auto s = select(range(10, 111), is_power_of_2);
+
+	while (s.resume()) {
+		std::cout << s.current() << std::endl;
+	}
+	
+	return 0;
+}
+
+```
+
 ## Brainfuck interpreter
 ```
 #include "bf.h"
