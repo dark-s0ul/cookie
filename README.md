@@ -9,6 +9,31 @@ struct generator : protected coroutine {
 	using coroutine::coroutine;
 	using coroutine::done;
 	using coroutine::resume;
+	
+	struct iterator {
+		generator* g;
+		bool m_resume;
+
+		inline bool operator!=(iterator& other) noexcept {
+			return (g == other.g) && (m_resume != other.m_resume);
+		}
+
+		inline void operator++() noexcept {
+			m_resume = g->resume();
+		}
+
+		inline T operator*() noexcept {
+			return g->current();
+		}
+	};
+	
+	[[nodiscard]] inline iterator begin() noexcept {
+		return {this, resume()};
+	}
+
+	[[nodiscard]] inline iterator end() noexcept {
+		return {this, false};
+	}
 
 	inline T current() noexcept {
 		return *static_cast<const T*>(v_ptr);
@@ -26,10 +51,9 @@ generator<T> range(T min, T max) {
 }
 
 template <typename T, typename F>
-generator<int> select(generator<T>&& g, const F& predicate) {
-	return [g = std::forward<generator<T>>(g), predicate]() mutable {
-		while (g.resume()) {
-			auto&& v = g.current();
+generator<int> select(T&& g, const F& predicate) {
+	return [g = std::forward<T>(g), predicate]() mutable {
+		for (auto v : g) {
 			if (predicate(v)) {
 				yield(v);
 			}
@@ -42,10 +66,8 @@ bool is_power_of_2(int x) {
 }
 
 int main() {
-	auto s = select(range(10, 111), is_power_of_2);
-
-	while (s.resume()) {
-		std::cout << s.current() << std::endl;
+	for (auto v : select(range(10, 111), is_power_of_2)) {
+		std::cout << v << std::endl;
 	}
 	
 	return 0;
