@@ -54,14 +54,14 @@ int main() {
 ```
 
 ## Brainfuck interpreter
-```
+```cpp
 #include "bf.h"
 
 bf::eval("+++++++[>+++++++<-]>."); //print 1
 ```
 
 ## Getter & Setter
-```
+```cpp
 #include <iostream>
 #include <assert.h>
 
@@ -90,7 +90,7 @@ int main() {
 ```
 
 ## Dynamic function
-```
+```cpp
 #include "func_ptr.h"
 #include <assert.h>
 
@@ -106,7 +106,7 @@ int main() {
 ```
 
 ## Function holder
-```
+```cpp
 faster in ~2 times than std::function
 
 #include "function.h"
@@ -124,7 +124,7 @@ f = b;
 ```
 
 ## Custom operator
-```
+```cpp
 #include "make_operator.h"
 #include <assert.h>
 
