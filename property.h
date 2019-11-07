@@ -2,16 +2,13 @@
 
 #include <functional>
 
-template <typename T = void, template <typename> typename...>
+template <typename...>
 struct property;
 
 template <>
 struct property<> {
-    template <typename T>
-    using get = std::function<T()>;
-
-    template <typename T>
-    using set = std::function<void(const T&)>;
+    using get = struct {};
+    using set = struct {};
 };
 
 template <typename T>
@@ -56,32 +53,36 @@ struct property<T, property<>::get> {
     }
 
 private:
-    const property<>::get<T> m_get;
+    const std::function<T()> m_get;
 };
 
 template <typename T>
 struct property<T, property<>::set> {
+    using value_type = std::decay_t<T>;
+
     template <typename U>
     property(U&& get) : m_set(get) {}
 
-    property& operator =(const T& v) {
-        m_set(v);
+    property& operator =(value_type& v) {
+        set(v);
         return *this;
     }
 
-    property& operator =(T&& v) {
-        m_set(std::forward<T>(v));
+    property& operator =(value_type&& v) {
+        set(std::forward<T>(v));
         return *this;
     }
 
 private:
-    const property<>::set<T> m_set;
+    const std::function<void(const T&)> m_set;
 };
 
 template <typename T>
 struct property<T, property<>::get, property<>::set> {
-    const property<>::get<T> get;
-    const property<>::set<T> set;
+    using value_type = std::decay_t<T>;
+
+    const std::function<T()> get;
+    const std::function<void(const T&)> set;
 
     operator T() {
         return get();
@@ -91,12 +92,12 @@ struct property<T, property<>::get, property<>::set> {
         return get();
     }
 
-    property& operator =(const T& v) {
+    property& operator =(value_type& v) {
         set(v);
         return *this;
     }
 
-    property& operator =(T&& v) {
+    property& operator =(value_type&& v) {
         set(std::forward<T>(v));
         return *this;
     }
