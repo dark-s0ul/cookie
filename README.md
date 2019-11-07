@@ -82,33 +82,30 @@ int main() {
 bf::eval("+++++++[>+++++++<-]>."); //print 1
 ```
 
-## Getter & Setter
+## Property
 ```cpp
 #include <iostream>
 #include <assert.h>
 
 #include "property.h"
 
-struct A {
-	property<int> value {
-		[&]() -> int { 
-			return x * x;
-		},
-		[&](auto value) {
-			x = value;
-		}
-	};
-
-	int x;
+int value = 0;
+property<int, property<>::get, property<>::set> get_set_value = {
+	.get = [] { return value; },
+	.set = [] (const int v) {
+		value = v * v;
+	}
+};
+property<int, property<>::get> only_get_value = [] { 
+	return value; 
 };
 
-int main() {
-	A a;
-	a.value = 10;
+property<int, property<>::set> only_set_value = [](const int v) { 
+	value = v * v; 
+};
 
-	assert(a.x == 10);
-	assert(a.value == 100);
-}
+property<int&> ref_to_value = value;
+property<int> other_value = value;
 ```
 
 ## Dynamic function
