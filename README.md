@@ -166,3 +166,20 @@ int main() {
 	assert(!(11 <in> v));
 }
 ```
+
+## Meta function
+```cpp
+#include "meta_function.hpp"
+
+int main() {
+    constexpr auto fn1 = $fn((a, b, c, d) -> d - ((a - b) + c));
+    constexpr auto fn2 = [](int a, int b, int c, int d) {return d - ((a - b) + c); };
+
+    static_assert(fn1(12, 97, 11, 121) == fn2(12, 97, 11, 121));
+
+    constexpr auto p_fn = static_cast<int(*)(int, int, int, int)>(fn1);
+
+    static_assert(195 == p_fn(12, 97, 11, 121));
+    return 0;
+}
+```
